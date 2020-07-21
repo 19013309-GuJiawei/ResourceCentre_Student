@@ -145,6 +145,11 @@ public class ResourceCentre {
 
 	public static String retrieveAllChromebook(ArrayList<Chromebook> chromebookList) {
 		String output = "";
+
+
+
+		
+
 		// write your code here
 
 		// Jiawei
@@ -156,9 +161,11 @@ public class ResourceCentre {
 					chromebookList.get(i).getDueDate(),chromebookList.get(i).getOs());
 		}
 
+
 		return output;
 	}
 	public static void viewAllChromebook(ArrayList<Chromebook> chromebookList) {
+
 
 		
 		ResourceCentre.setHeader("CHROMEBOOK LIST");
@@ -171,6 +178,7 @@ public class ResourceCentre {
 				"AVAILABLE", "DUE DATE","OS");
 		output1 += retrieveAllChromebook(chromebookList);
 		System.out.println(output1);
+
 
 	}
 
@@ -192,6 +200,7 @@ public class ResourceCentre {
 	
 	public static Chromebook inputChromebook() {	
 		// write your code here
+
 		//Daven Sim
 		String tag = Helper.readString("Enter asset tag > ");
 		String description = Helper.readString("Enter description > ");
@@ -200,10 +209,12 @@ public class ResourceCentre {
 		Chromebook cb = new Chromebook(tag, description, os);
 		
 		return cb;
+
 		
 	}	
 	public static void addChromebook(ArrayList<Chromebook> chromebookList, Chromebook cb) {
 		// write your code here
+
 
 		
 		chromebookList.add(cb);
@@ -213,6 +224,7 @@ public class ResourceCentre {
 		// Jiawei
 		chromebookList.add(cb);
 		System.out.println("Chromebook added");
+
 
 	}
 	
@@ -248,6 +260,8 @@ public class ResourceCentre {
 	
 	public static boolean doLoanChromebook(ArrayList<Chromebook> chromebookList, String tag, String dueDate) {
 		// write your code here
+
+
 		//Daven
 		boolean isLoaned = false;
 
@@ -264,9 +278,11 @@ public class ResourceCentre {
 		}
 		return isLoaned;
 		
+
 	}
 	public static void loanChromebook(ArrayList<Chromebook> chromebookList) {
 		// write your code here
+
 		
 		
 	}
@@ -302,6 +318,8 @@ public class ResourceCentre {
 	public static boolean doReturnChromebook(ArrayList<Chromebook> chromebookList,String tag){
 		boolean isReturned = false;
 		// write your code here
+
+
 		//Daven
 
 		for (int i = 0; i < chromebookList.size(); i++) {
@@ -315,11 +333,25 @@ public class ResourceCentre {
 		}
 		return isReturned;
 	
+
 	}
+	
+	
 	public static void returnChromebook(ArrayList<Chromebook> chromebookList) {
 		// write your code here
 		// write your code here
+		
+		// Jonathan
+		ResourceCentre.viewAllChromebook(chromebookList);
+		String tag = Helper.readString("Enter asset tag > ");
+		Boolean isReturned = doReturnChromebook(chromebookList, tag);
+		
+		if (isReturned == false) {
+			System.out.println("Invalid asset tag");
+		} else {
+			System.out.println("Chromebook " + tag + " returned");
+		}
 	}
 
-
 }
+
