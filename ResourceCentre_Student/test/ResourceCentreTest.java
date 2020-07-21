@@ -181,7 +181,7 @@ public class ResourceCentreTest {
 	public void doReturnChromebookTest() {
 		//fail("Not yet implemented");
 		// write your code here
-		//Alyssa
+		//Joshua
 		
 		assertNotNull("Test if there is valid Chromebook arraylist to",chromebookList);
 		ResourceCentre.addChromebook(chromebookList, cb1);
@@ -190,7 +190,7 @@ public class ResourceCentreTest {
 		Boolean isReturned = ResourceCentre.doReturnChromebook(chromebookList, "CB0011");
 		assertFalse("Test if available chromebook CC0011 is returned -false" , isReturned);
 		
-		//No error, normal
+		//Normal
 		ResourceCentre.addChromebook(chromebookList, cb2);
 		cb2.setIsAvailable(false);
 		isReturned = ResourceCentre.doReturnChromebook(chromebookList, "CB0012");
