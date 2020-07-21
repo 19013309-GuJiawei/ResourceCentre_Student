@@ -157,7 +157,7 @@ public class ResourceCentreTest {
 		// write your code here
 		//Alyssa
 		
-		assertNotNull("Test if there is valid Chromebook arraylist to",camcorderList);
+		assertNotNull("Test if there is valid CamorderList arraylist to",camcorderList);
 		ResourceCentre.addCamcorder(camcorderList, cc1);
 		
 		//Error Occurs
@@ -181,6 +181,24 @@ public class ResourceCentreTest {
 	public void doReturnChromebookTest() {
 		//fail("Not yet implemented");
 		// write your code here
+		//Alyssa
+		
+		assertNotNull("Test if there is valid Chromebook arraylist to",chromebookList);
+		ResourceCentre.addChromebook(chromebookList, cb1);
+		
+		//Error Occurs
+		Boolean isReturned = ResourceCentre.doReturnChromebook(chromebookList, "CB0011");
+		assertFalse("Test if available chromebook CC0011 is returned -false" , isReturned);
+		
+		//No error, normal
+		ResourceCentre.addChromebook(chromebookList, cb2);
+		cb2.setIsAvailable(false);
+		isReturned = ResourceCentre.doReturnChromebook(chromebookList, "CB0012");
+		assertTrue("Test if loaned out chromebook CB0012 is returned -true" , isReturned);
+		
+		//Error Occurs
+		isReturned = ResourceCentre.doReturnChromebook(chromebookList, "CB0013");
+		assertFalse("Test if loaned out chromebook CB0013 is returned -false" , isReturned);
 		
 	}
 	
