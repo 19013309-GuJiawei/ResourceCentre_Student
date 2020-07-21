@@ -146,12 +146,15 @@ public class ResourceCentre {
 	public static String retrieveAllChromebook(ArrayList<Chromebook> chromebookList) {
 		String output = "";
 		// write your code here
+	
 		return output;
 	}
 	public static void viewAllChromebook(ArrayList<Chromebook> chromebookList) {
 		
-		String output = retrieveAllChromebook(chromebookList);
-		System.out.println(output);
+		ResourceCentre.setHeader("CHROMEBOOK LIST");
+		String output = String.format("%-10s %-30s %-10s %-10s %-20s\n", "ASSET TAG", "DESCRIPTION",
+				"AVAILABLE", "DUE DATE","OS");
+		output += retrieveAllChromebook(chromebookList);
 	}
 
 	//================================= Option 2 Add =================================
@@ -178,6 +181,7 @@ public class ResourceCentre {
 	}	
 	public static void addChromebook(ArrayList<Chromebook> chromebookList, Chromebook cb) {
 		// write your code here
+		
 	}
 	
 	//================================= Option 3 Loan =================================
