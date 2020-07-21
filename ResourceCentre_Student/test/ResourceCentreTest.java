@@ -51,7 +51,35 @@ public class ResourceCentreTest {
 	public void addChromebookTest() {
 		//fail("Not yet implemented");
 		// write your code here
+
+		// Item list is not null, so that can add a new item
+				assertNotNull("Test if there is valid Camcorder arraylist to add to", camcorderList);
+				
+				//Given an empty list, after adding 1 item, the size of the list is 1
+				ResourceCentre.addCamcorder(camcorderList, cc1);		
+				assertEquals("Test if that Camcorder arraylist size is 1?", 1, camcorderList.size());
+				
+				//The item just added is as same as the first item of the list
+				assertSame("Test that Camcorder is added same as 1st item of the list?", cc1, camcorderList.get(0));
+				
+				//Add another item. test The size of the list is 2?
+				ResourceCentre.addCamcorder(camcorderList, cc2);
+				assertEquals("Test that Camcorder arraylist size is 2?", 2, camcorderList.size());
+
+				
+		assertNotNull("Test if there is valid Chromebook arraylist to add to", chromebookList);
+		
+		ResourceCentre.addChromebook(chromebookList, cb1);	
+		assertEquals("Test if that Chromebook arraylist size is 1?", 1, chromebookList.size());
+		
+		assertSame("Test that the Chromebook is added same as 1st item of the list?", cb1, chromebookList.get(0));
+		
+		ResourceCentre.addChromebook(chromebookList, cb2);
+		assertEquals("Test Chromebook arraylist size is 2?", 2, chromebookList.size());
+		
+
 	}
+	
 	
 	@Test
 	public void retrieveAllCamcorderTest() {
@@ -81,6 +109,8 @@ public class ResourceCentreTest {
 	public void retrieveAllChromebookTest() {
 		//fail("Not yet implemented");
 		// write your code here
+
+		// Jiawei
 		assertNotNull("Test if there is valid Camcorder arraylist to add to", chromebookList);
 		String allChromebook= ResourceCentre.retrieveAllChromebook(chromebookList);
 		String testOutput = "";
@@ -98,17 +128,15 @@ public class ResourceCentreTest {
 		assertEquals("Check that ViewAllChromebooklist", testOutput, allChromebook);
 		
 		
-		
-		
-		
 	}
 
 	@Test
 	public void doLoanCamcorderTest() {
 		//fail("Not yet implemented");
 		// write your code here
-		
 	}
+		
+	
 	
 	@Test
 	public void doLoanChromebookTest() {
