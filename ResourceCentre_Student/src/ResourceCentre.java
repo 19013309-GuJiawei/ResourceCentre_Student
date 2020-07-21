@@ -192,7 +192,7 @@ public class ResourceCentre {
 	
 	public static Chromebook inputChromebook() {	
 		// write your code here
-		//Daven
+		//Daven Sim
 		String tag = Helper.readString("Enter asset tag > ");
 		String description = Helper.readString("Enter description > ");
 		String os = Helper.readString("Enter operating system name > ");
