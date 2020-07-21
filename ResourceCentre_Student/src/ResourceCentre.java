@@ -31,7 +31,7 @@ public class ResourceCentre {
 				System.out.println("1. Camcorder");
 				System.out.println("2. Chromebook");
 				
-				int itemType = Helper.readInt("Enter option to select item type > ");
+				int itemType = Helper.readInt("Enter an option to select item type > ");
 
 				if (itemType == 1) {
 					// Add a camcorder
